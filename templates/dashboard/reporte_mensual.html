@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte Mensual</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; }
+        .card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #d1d5db; padding: 10px; }
+        th { background: #e5e7eb; }
+        a { color: #1f2937; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Reporte mensual de ventas</h1>
+        <p><a href="{% url 'inicio' %}">Volver al dashboard</a></p>
+        <table>
+            <tr>
+                <th>Mes</th>
+                <th>Total ventas</th>
+                <th>Total documentos</th>
+            </tr>
+            {% for item in datos %}
+            <tr>
+                <td>{{ item.mes|date:"F Y" }}</td>
+                <td>${{ item.total_ventas }}</td>
+                <td>{{ item.total_documentos }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+venv/
+__pycache__/
+*.pyc
+.vscode/
+*.log
+Thumbs.db
+
+# SQLite - nunca subir la base ni respaldos (Sección 11.4 práctica auditoría)
+db.sqlite3
+*.sqlite3
+*.sqlite3.bak
+*.db
+*.db.bak
+media/db.sqlite3
+static/db.sqlite3
+backups_sqlite/
